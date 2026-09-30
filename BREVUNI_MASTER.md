@@ -80,14 +80,15 @@ El total debe permanecer claramente visible y actualizarse sin necesidad de puls
 
 El historial permitirá consultar conteos realizados anteriormente.
 
-Objetivos:
+### Esqueleto funcional
 
-- Identificar cada conteo claramente.
-- Mostrar el importe total.
-- Facilitar la consulta de conteos anteriores.
-- Mantener una experiencia sencilla y rápida.
+- Lista de conteos anteriores.
+- Fecha y hora.
+- Importe total.
+- Acceso al detalle de un conteo.
+- Eliminación de un conteo.
 
-La definición detallada de campos y acciones queda pendiente de cierre.
+La definición detallada de campos y acciones puede ampliarse posteriormente si resulta necesaria.
 
 ---
 
@@ -98,8 +99,18 @@ El apartado **Más** contiene:
 - ⚙️ **Configuración**
 - 📤 **Compartir Brevuni**
 - ⭐ **Valorar Brevuni**
-- 🔒 **Política de privacidad**
 - ℹ️ **Acerca de Brevuni**
+
+### Acerca de Brevuni
+
+Dentro de **Acerca de Brevuni** estarán:
+
+- Versión de la aplicación.
+- 🔒 **Política de privacidad**.
+- Información básica de Brevuni.
+- Licencias de código abierto, si procede.
+
+La política de privacidad **no será un elemento independiente de primer nivel dentro de Más**.
 
 ---
 
@@ -206,7 +217,7 @@ Principios previstos:
 - No exigir registro obligatorio.
 - Priorizar el almacenamiento y procesamiento local para las funciones básicas.
 - Mantener separadas las funciones que requieran servicios externos.
-- Hacer accesible la política de privacidad desde **Más**.
+- Hacer accesible la política de privacidad desde **Más → Acerca de Brevuni**.
 
 La política definitiva debe reflejar exactamente los datos que procese la versión final de la aplicación.
 
@@ -244,7 +255,7 @@ Las decisiones definitivas se añadirán cuando queden aprobadas.
 
 ## 14. Arquitectura funcional
 
-```text
+```
 BREVUNI
 │
 ├── 💰 Contar
@@ -255,6 +266,8 @@ BREVUNI
 │   └── Interacción suma/resta
 │
 ├── 📋 Historial
+│   ├── Lista de conteos
+│   └── Detalle de conteo
 │
 └── ⋮ Más
     ├── ⚙️ Configuración
@@ -265,13 +278,37 @@ BREVUNI
     │
     ├── 📤 Compartir Brevuni
     ├── ⭐ Valorar Brevuni
-    ├── 🔒 Política de privacidad
     └── ℹ️ Acerca de Brevuni
+        └── 🔒 Política de privacidad
 ```
 
 ---
 
-## 15. Reglas para futuras funcionalidades
+## 15. Esqueleto funcional — estado
+
+**Estado: En curso**
+
+### Pantallas y acciones definidas
+
+- [x] Contar.
+- [x] Historial — lista.
+- [x] Historial — detalle.
+- [x] Más.
+- [x] Configuración.
+- [x] Apariencia.
+- [x] Moneda.
+- [x] Conteo.
+- [x] Idioma.
+- [x] Acerca de Brevuni.
+- [x] Política de privacidad ubicada dentro de Acerca de Brevuni.
+- [x] Compartir Brevuni como acción del sistema.
+- [x] Valorar Brevuni como acción hacia Google Play.
+
+El esqueleto funcional queda definido a nivel de navegación y propósito. El detalle visual y el contenido exacto de cada pantalla se cerrarán antes o durante la implementación.
+
+---
+
+## 16. Reglas para futuras funcionalidades
 
 Antes de añadir una nueva pantalla o función:
 
@@ -286,7 +323,7 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 16. MVP 1.0
+## 17. MVP 1.0
 
 ### Imprescindible
 
@@ -316,7 +353,7 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 17. Checklist de lanzamiento
+## 18. Checklist de lanzamiento
 
 ### Producto
 
@@ -354,20 +391,22 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 18. Registro de decisiones
+## 19. Registro de decisiones
 
-| Fecha | Decisión |
-|---|---|
-| 30/09/2026 | Nombre del proyecto: **Brevuni** |
-| 30/09/2026 | Navegación confirmada: **Contar | Historial | Más** |
-| 30/09/2026 | Más contiene Configuración, Compartir Brevuni, Valorar Brevuni, Política de privacidad y Acerca de Brevuni |
-| 30/09/2026 | Configuración contiene Apariencia, Moneda, Conteo e Idioma |
-| 30/09/2026 | Diseño visual todavía en fase de trabajo |
-| 30/09/2026 | Monetización todavía pendiente |
+| Fecha | Decisión | Estado |
+|---|---|---|
+| 30/09/2026 | Nombre del proyecto: **Brevuni** | Realizado |
+| 30/09/2026 | Navegación confirmada: **Contar | Historial | Más** | Realizado |
+| 30/09/2026 | Más contiene Configuración, Compartir Brevuni, Valorar Brevuni y Acerca de Brevuni | Realizado |
+| 30/09/2026 | Política de privacidad pasa a estar dentro de **Acerca de Brevuni** y deja de ser una opción independiente de Más | Realizado |
+| 30/09/2026 | Configuración contiene Apariencia, Moneda, Conteo e Idioma | Realizado |
+| 30/09/2026 | Esqueleto funcional de pantallas definido | Realizado |
+| 30/09/2026 | Diseño visual todavía en fase de trabajo | Pendiente |
+| 30/09/2026 | Monetización todavía pendiente | Pendiente |
 
 ---
 
-## 19. Regla del documento maestro
+## 20. Regla del documento maestro
 
 `BREVUNI_MASTER.md` es la referencia principal del proyecto.
 
@@ -378,4 +417,4 @@ Cuando una decisión quede aprobada:
 3. Se registra la fecha.
 4. Las futuras implementaciones deben seguir el estado aprobado del documento.
 
-**Estado:** documento maestro inicial creado.
+**Estado actual:** documento maestro actualizado con el esqueleto funcional y la nueva ubicación de la política de privacidad.
