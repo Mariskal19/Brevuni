@@ -31,3 +31,4 @@ jobs:
         with:
           name: brevuni-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
