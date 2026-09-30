@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -29,21 +28,16 @@ import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Security
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.Divider
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -161,7 +155,7 @@ private fun CountScreen(
         Spacer(Modifier.height(12.dp))
 
         LazyColumn(
-            modifier = Modifier.weight(1f).fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().fillMaxHeight(0.72f),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             item { Text("Billetes", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold) }
@@ -178,8 +172,8 @@ private fun CountScreen(
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            TextButton(onClick = onUndo, modifier = Modifier.weight(1f)) { Text("Deshacer") }
-            Button(onClick = onSave, modifier = Modifier.weight(1f)) { Text("Guardar") }
+            TextButton(onClick = onUndo, modifier = Modifier.fillMaxWidth(0.5f)) { Text("Deshacer") }
+            Button(onClick = onSave, modifier = Modifier.fillMaxWidth(0.5f)) { Text("Guardar") }
         }
     }
 }
@@ -202,7 +196,7 @@ private fun DenominationRow(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(money(value), modifier = Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
+            Text(money(value), modifier = Modifier.fillMaxWidth(0.78f), fontWeight = FontWeight.SemiBold)
             Text("× $count", fontSize = 18.sp)
         }
     }
@@ -225,7 +219,7 @@ private fun HistoryScreen(modifier: Modifier, history: List<HistoryEntry>) {
                             Modifier.fillMaxWidth().padding(16.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Column(Modifier.weight(1f)) {
+                            Column(Modifier.fillMaxWidth(0.75f)) {
                                 Text(entry.label, fontWeight = FontWeight.SemiBold)
                                 Text(money(entry.total))
                             }
@@ -260,7 +254,7 @@ private fun MoreScreen(modifier: Modifier) {
 
 @Composable
 private fun MoreItem(icon: ImageVector, title: String, onClick: () -> Unit) {
-    Card(Modifier.fillMaxWidth().padding(vertical = 4.dp), onClick = onClick) {
+    Card(onClick = onClick, modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Icon(icon, null, Modifier.size(24.dp))
             Text(title, Modifier.padding(start = 16.dp), style = MaterialTheme.typography.titleMedium)
