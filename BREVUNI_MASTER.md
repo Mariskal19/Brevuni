@@ -308,7 +308,36 @@ El esqueleto funcional queda definido a nivel de navegación y propósito. El de
 
 ---
 
-## 16. Reglas para futuras funcionalidades
+## 16. Primer MVP funcional
+
+**Estado: En curso** — 30/09/2026
+
+Se ha creado una primera implementación Android funcional y deliberadamente sencilla para poder probar el producto antes de aplicar el diseño visual definitivo.
+
+Incluye:
+
+- Pantalla Contar.
+- Billetes y monedas.
+- Toque para sumar.
+- Pulsación larga para restar.
+- Total inmediato.
+- Deshacer.
+- Guardar conteos en el historial durante la sesión.
+- Historial básico.
+- Navegación inferior.
+- Apartado Más.
+- Compartir mediante el sistema Android.
+- Configuración y apartados previstos preparados como estructura del proyecto.
+- Base Jetpack Compose / Material 3.
+- Workflow de GitHub Actions para generar un APK debug.
+
+### Criterio de esta primera versión
+
+La prioridad es disponer de una aplicación funcional que podamos probar en un dispositivo. El diseño visual definitivo, la persistencia completa, multimoneda, multidioma y el resto del pulido se irán incorporando después de probar este MVP.
+
+---
+
+## 17. Reglas para futuras funcionalidades
 
 Antes de añadir una nueva pantalla o función:
 
@@ -323,7 +352,7 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 17. MVP 1.0
+## 18. MVP 1.0
 
 ### Imprescindible
 
@@ -353,7 +382,7 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 18. Checklist de lanzamiento
+## 19. Checklist de lanzamiento
 
 ### Producto
 
@@ -391,7 +420,7 @@ Antes de añadir una nueva pantalla o función:
 
 ---
 
-## 19. Registro de decisiones
+## 20. Registro de decisiones
 
 | Fecha | Decisión | Estado |
 |---|---|---|
@@ -402,11 +431,13 @@ Antes de añadir una nueva pantalla o función:
 | 30/09/2026 | Configuración contiene Apariencia, Moneda, Conteo e Idioma | Realizado |
 | 30/09/2026 | Esqueleto funcional de pantallas definido | Realizado |
 | 30/09/2026 | Diseño visual todavía en fase de trabajo | Pendiente |
+| 30/09/2026 | Primera implementación funcional creada para probar el producto antes del diseño definitivo | En curso |
+| 30/09/2026 | Primera versión basada en Jetpack Compose / Material 3 | Realizado |
 | 30/09/2026 | Monetización todavía pendiente | Pendiente |
 
 ---
 
-## 20. Regla del documento maestro
+## 21. Regla del documento maestro
 
 `BREVUNI_MASTER.md` es la referencia principal del proyecto.
 
